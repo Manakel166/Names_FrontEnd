@@ -1,0 +1,43 @@
+###### Preparation (à faire sur chaque PC la premiere fois que l'on veut modifier le projet) ####################
+#se connecter a heroku
+heroku login
+
+#ajouter le repo heroku
+heroku git:remote -a b2u-web
+
+#initialiser github
+git init
+
+#ajouter le repo github
+git remote add origin https://github.com/Manakel166/Names_FrontEnd.git
+
+#pull derniere version en test
+git pull heroku master
+
+#pull derniere version stable
+git pull origin master
+
+###### fin preparation ########################################
+
+#################################################################################################################
+#################################################################################################################
+
+###### à faire a chaque fois que l'on veut push ###############
+
+#compiler l'application
+#dans le dossier ionicB2U
+ionic serve
+#une fois fait voir si l'application tourne bien puis faire ctrl + c jusqu'a pouvoir ecrire des commande
+#aller dans le dossier www
+cd www
+
+#push sur heroku
+git add .
+git commit -m "message"
+git push heroku master
+
+#faire les test que l'on veut faire
+test
+
+#si les test passe, push sur github
+git push origin master
