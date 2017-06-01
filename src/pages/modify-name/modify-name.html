@@ -1,0 +1,35 @@
+<!--
+  Generated template for the ModifyNamePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Modify Name</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="form" (ngSubmit)="modify()">
+    <ion-item>
+      <ion-label color="primary">Old Name :</ion-label>
+      <ion-select multiple="false" formControlName="oldName" >
+          <ion-option *ngFor="let item of listNames">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">New Name :</ion-label>
+      <ion-input type="text" formControlName="newName"></ion-input>
+    </ion-item>
+    <button ion-button (click)="submit">Modify Name</button>
+  </form>
+  <div >{{response}}</div>
+
+</ion-content>
