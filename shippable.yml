@@ -22,5 +22,5 @@ build:
     - "git clone https://github.com/Manakel166/Names_Testing.git /root/src/github.com/Manakel166/Names_Backend/Tests"
     - "cd /root/src/github.com/Manakel166/Names_FrontEnd//"
     - "ionic serve  &"
-    - "cd /root/src/github.com/Manakel166/Names_FrontEnd/Tests/Names_BDD"
+    - "cd /root/src/github.com/Manakel166/Names_FrontEnd/Tests/Names_Testing/Names_BDD"
     - "python -m robot.run --variable selenium_grid_url:http://localhost:4444/wd/hub  --variable app_url:http://localhost:8100 --variable target_browser:Firefox  --variable target_platform:Linux --variable target_browser_version:44 --xunit /root/src/github.com/Manakel166/Names_FrontEnd/shippable/testresults/RF_WEB_TESTS.xml Names_Web.robot"
