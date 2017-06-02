@@ -1,0 +1,26 @@
+language: python
+python:
+  - 2.7
+  
+addons:
+  firefox: "44.0"
+  
+services:
+  - selenium
+  
+build:
+  ci:
+    - "pip install robotframework"
+    - "pip install -U requests"
+    - "pip install -U robotframework-requests"
+    - "pip install robotframework-Selenium2Library"
+    - "pip install urllib3 --upgrade --trusted-host https://pypi.python.org"
+    - "pip install robotframework-xvfb"
+    - "/usr/bin/Xvfb :99 -screen 0 1024x768x24&"
+    - "export DISPLAY=:99"
+    - "echo DOWNLOADING REST API TESTS"
+    - "git clone https://github.com/Manakel166/Names_Testing.git /root/src/github.com/Manakel166/Names_Backend/Tests"
+    - "cd /root/src/github.com/Manakel166/Names_FrontEnd//"
+    - "ionic serve  &"
+    - "cd /root/src/github.com/Manakel166/Names_FrontEnd/Tests/Names_BDD"
+    - "python -m robot.run --variable selenium_grid_url:http://localhost:4444/wd/hub  --variable app_url:http://localhost:8100 --variable target_browser:Firefox  --variable target_platform:Linux --variable target_browser_version:44 --xunit /root/src/github.com/Manakel166/Names_FrontEnd/shippable/testresults/RF_WEB_TESTS.xml Names_Web.robot"
