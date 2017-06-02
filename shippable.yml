@@ -1,4 +1,7 @@
-language: node_js
+language: python
+
+python:
+  - 2.7
 
   
 addons:
@@ -22,4 +25,4 @@ build:
     - "cd /root/src/github.com/Manakel166/Names_FrontEnd/"
     - "ionic serve  &"
     - "cd /root/src/github.com/Manakel166/Names_FrontEnd/Tests/Names_BDD/"
-    - "python -m robot.run --variable selenium_grid_url:http://Manakel166:217e2175-30a5-4fa9-8146-d2350af3a14d@ondemand.saucelabs.com:80/wd/hub  --variable app_url:http://localhost:8100 --variable target_browser:Firefox  --variable target_platform:Linux --variable target_browser_version:44 --xunit /root/src/github.com/Manakel166/Names_FrontEnd/shippable/testresults/RF_WEB_TESTS.xml Names_Web.robot"
+    - "python -m robot.run --variable selenium_grid_url:http://Manakel166:217e2175-30a5-4fa9-8146-d2350af3a14d@ondemand.saucelabs.com:80/wd/hub  --variable app_url:https://b2u-web.herokuapp.com  --variable target_browser:Firefox  --variable target_platform:Linux --variable target_browser_version:44 --xunit /root/src/github.com/Manakel166/Names_FrontEnd/shippable/testresults/RF_WEB_TESTS.xml Names_Web.robot"
