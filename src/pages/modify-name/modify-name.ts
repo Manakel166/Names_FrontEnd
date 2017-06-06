@@ -33,11 +33,13 @@ export class ModifyNamePage {
     console.log(this.form.value.oldName);
     this.rest.modifyName(this.form.value).subscribe(res=>{
       this.response = this.form.value.oldName + " is now " + this.form.value.newName;
+      this.getNames();
     },
       err=>{
         this.response = "An error has occurred trying to process your request.";
       }
     );
+
   }
 
   getNames(){
@@ -46,7 +48,6 @@ export class ModifyNamePage {
       console.log(res.names);
       if(res.names.length == 0){
         console.log(res);
-        res.names.push("No names in database ");
       }
       this.listNames = res.names;
 

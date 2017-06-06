@@ -35,11 +35,13 @@ export class DeleteNamePage {
 
     this.rest.deleteName(this.names.value).subscribe(res=>{
       this.response = this.names.value.name + " has been deleted";
+      this.getNames();
     },
       err=>{
         this.response = "An error has occurred trying to process your request.";
       }
     );
+    this.getNames();
   }
 
   getNames(){
@@ -48,7 +50,6 @@ export class DeleteNamePage {
       console.log(res.names);
       if(res.names.length == 0){
         console.log(res);
-        res.names.push("No names in database ");
       }
       this.listNames = res.names;
 

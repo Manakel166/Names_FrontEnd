@@ -57950,7 +57950,7 @@ var AddNamePage = (function () {
 AddNamePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-add-name',template:/*ion-inline-start:"D:\WGROCHUL_DESK\ContinuousDeploymentDemo\Names_FrontEnd\src\pages\add-name\add-name.html"*/'<!--\n\n  Generated template for the AddNamePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Add Name</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="names" (ngSubmit)="add()">\n\n    <ion-item>\n\n      <ion-label color="primary">Name :</ion-label>\n\n      <ion-input type="text" formControlName="name"></ion-input>\n\n    </ion-item>\n\n    <button ion-button (click)="submit">Add Name</button>\n\n  </form>\n\n  <div >{{response}}</div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\WGROCHUL_DESK\ContinuousDeploymentDemo\Names_FrontEnd\src\pages\add-name\add-name.html"*/,
+        selector: 'page-add-name',template:/*ion-inline-start:"C:\RF\B2UionicTrue\src\pages\add-name\add-name.html"*/'<!--\n\n  Generated template for the AddNamePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Add Name</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="names" (ngSubmit)="add()">\n\n    <ion-item>\n\n      <ion-label color="primary">Name :</ion-label>\n\n      <ion-input type="text" formControlName="name"></ion-input>\n\n    </ion-item>\n\n    <button ion-button (click)="submit">Add Name</button>\n\n  </form>\n\n  <div >{{response}}</div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\RF\B2UionicTrue\src\pages\add-name\add-name.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* Rest */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ToastController */]])
 ], AddNamePage);
@@ -58006,9 +58006,11 @@ var DeleteNamePage = (function () {
         console.log(this.names.value);
         this.rest.deleteName(this.names.value).subscribe(function (res) {
             _this.response = _this.names.value.name + " has been deleted";
+            _this.getNames();
         }, function (err) {
             _this.response = "An error has occurred trying to process your request.";
         });
+        this.getNames();
     };
     DeleteNamePage.prototype.getNames = function () {
         var _this = this;
@@ -58017,7 +58019,6 @@ var DeleteNamePage = (function () {
             console.log(res.names);
             if (res.names.length == 0) {
                 console.log(res);
-                res.names.push("No names in database ");
             }
             _this.listNames = res.names;
         });
@@ -58030,11 +58031,12 @@ var DeleteNamePage = (function () {
 DeleteNamePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-delete-name',template:/*ion-inline-start:"D:\WGROCHUL_DESK\ContinuousDeploymentDemo\Names_FrontEnd\src\pages\delete-name\delete-name.html"*/'<!--\n\n  Generated template for the DeleteNamePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Delete Name</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="names" (ngSubmit)="delete()">\n\n    <ion-item>\n\n      <ion-label color="primary">Name</ion-label>\n\n      <ion-select multiple="false" formControlName="name" >\n\n          <ion-option *ngFor="let item of listNames">{{item}}</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <button ion-button (click)="submit">Delete Name</button>\n\n  </form>\n\n\n\n\n\n\n\n  <div >{{response}}</div>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\WGROCHUL_DESK\ContinuousDeploymentDemo\Names_FrontEnd\src\pages\delete-name\delete-name.html"*/,
+        selector: 'page-delete-name',template:/*ion-inline-start:"C:\RF\B2UionicTrue\src\pages\delete-name\delete-name.html"*/'<!--\n\n  Generated template for the DeleteNamePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Delete Name</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="names" (ngSubmit)="delete()">\n\n    <ion-item>\n\n      <ion-label color="primary">Name</ion-label>\n\n      <ion-select multiple="false" formControlName="name" >\n\n          <ion-option *ngFor="let item of listNames">{{item}}</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <button ion-button (click)="submit">Delete Name</button>\n\n  </form>\n\n\n\n\n\n\n\n  <div >{{response}}</div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\RF\B2UionicTrue\src\pages\delete-name\delete-name.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* Rest */], __WEBPACK_IMPORTED_MODULE_4__angular_forms__["e" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_file_chooser__["a" /* FileChooser */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* Rest */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* Rest */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_forms__["e" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_forms__["e" /* FormBuilder */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_file_chooser__["a" /* FileChooser */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_file_chooser__["a" /* FileChooser */]) === "function" && _e || Object])
 ], DeleteNamePage);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=delete-name.js.map
 
 /***/ }),
@@ -58084,6 +58086,7 @@ var ModifyNamePage = (function () {
         console.log(this.form.value.oldName);
         this.rest.modifyName(this.form.value).subscribe(function (res) {
             _this.response = _this.form.value.oldName + " is now " + _this.form.value.newName;
+            _this.getNames();
         }, function (err) {
             _this.response = "An error has occurred trying to process your request.";
         });
@@ -58095,7 +58098,6 @@ var ModifyNamePage = (function () {
             console.log(res.names);
             if (res.names.length == 0) {
                 console.log(res);
-                res.names.push("No names in database ");
             }
             _this.listNames = res.names;
         });
@@ -58108,11 +58110,12 @@ var ModifyNamePage = (function () {
 ModifyNamePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-modify-name',template:/*ion-inline-start:"D:\WGROCHUL_DESK\ContinuousDeploymentDemo\Names_FrontEnd\src\pages\modify-name\modify-name.html"*/'<!--\n\n  Generated template for the ModifyNamePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Modify Name</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="form" (ngSubmit)="modify()">\n\n    <ion-item>\n\n      <ion-label color="primary">Old Name :</ion-label>\n\n      <ion-select multiple="false" formControlName="oldName" >\n\n          <ion-option *ngFor="let item of listNames">{{item}}</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label color="primary">New Name :</ion-label>\n\n      <ion-input type="text" formControlName="newName"></ion-input>\n\n    </ion-item>\n\n    <button ion-button (click)="submit">Modify Name</button>\n\n  </form>\n\n  <div >{{response}}</div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\WGROCHUL_DESK\ContinuousDeploymentDemo\Names_FrontEnd\src\pages\modify-name\modify-name.html"*/,
+        selector: 'page-modify-name',template:/*ion-inline-start:"C:\RF\B2UionicTrue\src\pages\modify-name\modify-name.html"*/'<!--\n\n  Generated template for the ModifyNamePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Modify Name</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="form" (ngSubmit)="modify()">\n\n    <ion-item>\n\n      <ion-label color="primary">Old Name :</ion-label>\n\n      <ion-select multiple="false" formControlName="oldName" >\n\n          <ion-option *ngFor="let item of listNames">{{item}}</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label color="primary">New Name :</ion-label>\n\n      <ion-input type="text" formControlName="newName"></ion-input>\n\n    </ion-item>\n\n    <button ion-button (click)="submit">Modify Name</button>\n\n  </form>\n\n  <div >{{response}}</div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\RF\B2UionicTrue\src\pages\modify-name\modify-name.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* Rest */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* FormBuilder */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* Rest */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* Rest */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* FormBuilder */]) === "function" && _d || Object])
 ], ModifyNamePage);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=modify-name.js.map
 
 /***/ }),
@@ -58177,7 +58180,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"D:\WGROCHUL_DESK\ContinuousDeploymentDemo\Names_FrontEnd\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon id="menu" name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>List</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content\n\n      pullingIcon="arrow-dropdown"\n\n      pullingText="Pull to refresh"\n\n      refreshingSpinner="circles"\n\n      refreshingText="Refreshing...">\n\n    </ion-refresher-content>\n\n  </ion-refresher>\n\n  <ion-list>\n\n    <ion-item>\n\n      <h1>Names list</h1>\n\n    </ion-item>\n\n    <ion-item *ngFor="let item of items">\n\n      <h2>{{item}}</h2>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\WGROCHUL_DESK\ContinuousDeploymentDemo\Names_FrontEnd\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"C:\RF\B2UionicTrue\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon id="menu" name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>List</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content\n\n      pullingIcon="arrow-dropdown"\n\n      pullingText="Pull to refresh"\n\n      refreshingSpinner="circles"\n\n      refreshingText="Refreshing...">\n\n    </ion-refresher-content>\n\n  </ion-refresher>\n\n  <ion-list>\n\n    <ion-item>\n\n      <h1>Names list</h1>\n\n    </ion-item>\n\n    <ion-item *ngFor="let item of items">\n\n      <h2>{{item}}</h2>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\RF\B2UionicTrue\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* Rest */]])
 ], HomePage);
@@ -77181,7 +77184,7 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({template:/*ion-inline-start:"D:\WGROCHUL_DESK\ContinuousDeploymentDemo\Names_FrontEnd\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"D:\WGROCHUL_DESK\ContinuousDeploymentDemo\Names_FrontEnd\src\app\app.html"*/
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({template:/*ion-inline-start:"C:\RF\B2UionicTrue\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\RF\B2UionicTrue\src\app\app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
