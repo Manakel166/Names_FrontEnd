@@ -38,5 +38,5 @@ build:
 
   on_success:
     - "cd /root/src/github.com/Manakel166/Names_FrontEnd/"
-    - "git push -f git@heroku.com:$APP_NAME.git master"
+    - echo "git push -f git@heroku.com:$APP_NAME.git master"
     - echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/FrontEnd_Tested_Image.env
